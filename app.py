@@ -31,7 +31,7 @@ driver.find_element_by_css_selector("#username").send_keys("18502833582")
 
 driver.find_element_by_css_selector("#password").send_keys("wule3695210")
 
-driver.find_elements_by_css_selector(".account-tabcon-start .account-form-field-submit a")
+driver.find_elements_by_css_selector(".account-tabcon-start .account-form-field-submit a").click()
 
 def spider(page):
     base_url = 'https://book.douban.com/tag/小说?type=T&start=%s' % (page * 20)
