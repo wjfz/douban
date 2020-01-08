@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package pb;
+
+service Greeter {
+    rpc GetBookInfo (GetBookInfoReq) returns (GetBookInfoResp);
+}
+
+message GetBookInfoReq {
+    string isbn = 1;
+}
+
+message GetBookInfoResp {
+    Info info = 1;
+    string about_author = 2; // '作者简介',
+    string brief_introduction = 3; //  '内容简介',
+    string directory = 4; //'目录',
+    repeated string tags = 5; // '标签',
+    repeated string where_to_buy = 6; //'在哪买',
+    repeated string recommend = 7; //  '相关推荐',
+    Read read =8;
+}
+
+message Info {
+    string title = 1; // '书名',
+    string sub_title = 2; //    '副标题',
+    string isbn = 3; // 'isbn',
+    string translator = 4; // '译者',
+    string image = 5;  // 图片
+    string author = 6; //   '作者',
+    string origin_author = 7; //  '原作者',
+    string publisher = 8; //  '出版社',
+    string publish_at = 9; // '出版日期',
+    string page_num = 10; // '页数',
+    string price = 11; //  '价格',
+    string binding = 12; //   '装帧',
+    string producer = 13; // '出品方',
+    string score = 14; // '评分',
+    string series = 15; //   '丛书',
+}
+
+message Read {
+    int32 reading = 22; //'在读',
+    int32 readed = 23; // '读过',
+    int32 want_read = 24; // '想读'
+}
